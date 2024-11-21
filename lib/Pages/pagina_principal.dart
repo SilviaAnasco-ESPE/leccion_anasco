@@ -29,7 +29,11 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
     double _numeroAumentado = _calculo.calcularAumento(_numeroAleatorio, 30);
 
     setState(() {
-      _numAleatorio = 'La ganancia es \$${ganancia.toStringAsFixed(2)}';
+      _numAleatorio = "\$${_numeroAleatorio.toStringAsFixed(0)}";
+    });
+
+    setState(() {
+      _numAumentado = "\$${_numeroAumentado.toStringAsFixed(0)}";
     });
   }
 
@@ -88,7 +92,7 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
               child: Column(
                 children: [
                   Text(
-                    "El costo total de la compra es:",
+                    "El número generado es:",
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -98,7 +102,7 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    "\$${_costoTotal.toStringAsFixed(0)}",
+                    _numAleatorio,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 28,
@@ -131,7 +135,7 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
               child: Column(
                 children: [
                   Text(
-                    "El costo total de la compra es:",
+                    "El número aumentado en un 30%:",
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 18,
@@ -141,7 +145,7 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
                   ),
                   const SizedBox(height: 8),
                   Text(
-                    "\$${_costoTotal.toStringAsFixed(0)}",
+                    _numAumentado,
                     style: const TextStyle(
                       color: Colors.white,
                       fontSize: 28,
@@ -158,3 +162,4 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
     );
   }
 }
+
