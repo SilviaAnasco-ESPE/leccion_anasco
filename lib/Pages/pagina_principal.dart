@@ -29,11 +29,11 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
     double _numeroAumentado = _calculo.calcularAumento(_numeroAleatorio, 30);
 
     setState(() {
-      _numAleatorio = "\$${_numeroAleatorio.toStringAsFixed(0)}";
+      _numAleatorio = "\$${_numeroAleatorio.toString()}";
     });
 
     setState(() {
-      _numAumentado = "\$${_numeroAumentado.toStringAsFixed(0)}";
+      _numAumentado = "\$${_numeroAumentado.toStringAsFixed(2)}";
     });
   }
 
@@ -42,27 +42,27 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: Text('Generador de números aleatorios'),
+        title: const Text('Generador de números aleatorios'),
         backgroundColor: Colors.tealAccent,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(24.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded(
+            SizedBox(
+              height: 50,
               child: ElevatedButton(
                 onPressed: mostrar,
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFF4ECDC4),
-                  padding: const EdgeInsets.symmetric(vertical: 16),
+                  backgroundColor: const Color(0xFF4CAF50),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                   elevation: 2,
                 ),
                 child: const Text(
-                  "Calcular Costo Total",
+                  "Calcular número aleatorio",
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
@@ -71,10 +71,14 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
                 ),
               ),
             ),
+
+            const SizedBox(height: 20),
+
             Container(
-              padding: const EdgeInsets.all(20),
+              margin: const EdgeInsets.only(bottom: 16.0),
+              padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [Color(0xFF4ECDC4), Color(0xFF2AB7CA)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -91,9 +95,9 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
               ),
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     "El número generado es:",
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.normal,
@@ -115,9 +119,9 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
             ),
 
             Container(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(16.0),
               decoration: BoxDecoration(
-                gradient: LinearGradient(
+                gradient: const LinearGradient(
                   colors: [Color(0xFF4ECDC4), Color(0xFF2AB7CA)],
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -134,9 +138,9 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
               ),
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     "El número aumentado en un 30%:",
-                    style: const TextStyle(
+                    style: TextStyle(
                       color: Colors.white,
                       fontSize: 18,
                       fontWeight: FontWeight.normal,
@@ -160,6 +164,7 @@ class _paginaPrincipalState extends State<paginaPrincipal> {
         ),
       ),
     );
+
   }
 }
 
